@@ -10443,6 +10443,12 @@ struct SyncListener : MegaListener
         check(state(sync) != nonexistent);
     }
 
+    void onSyncRemoteRootChanged(MegaApi* api, MegaSync* sync) override
+    {
+        out() << "onSyncRemoteRootChanged " << toHandle(sync->getBackupId())
+              << " new Remote root: " << sync->getLastKnownMegaFolder();
+    }
+
     void onGlobalSyncStateChanged(MegaApi* api) override
     {
         // just too frequent for out() really
