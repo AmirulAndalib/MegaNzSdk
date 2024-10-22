@@ -19693,7 +19693,7 @@ error MegaClient::readSet(JSON& j, Set& s)
             s.setId(j.gethandle(MegaClient::SETHANDLE));
             break;
 
-        case MAKENAMEID2('p', 'h'):
+        case name_id::ph:
         {
             s.setPublicId(j.gethandle(MegaClient::PUBLICSETHANDLE)); // overwrite if existed
             break;
@@ -20300,7 +20300,7 @@ error MegaClient::readExportedSet(JSON& j, Set& s, pair<bool,m_off_t>& exportRem
             s.setId(j.gethandle(MegaClient::SETHANDLE));
             break;
 
-        case MAKENAMEID2('p', 'h'):
+        case name_id::ph:
             s.setPublicId(j.gethandle(MegaClient::PUBLICSETHANDLE)); // overwrite if existed
             break;
 
@@ -20350,7 +20350,7 @@ error MegaClient::readSetPublicHandle(JSON& j, map<handle, Set>& sets)
             item = j.gethandle(MegaClient::SETHANDLE);
             break;
 
-        case MAKENAMEID2('p', 'h'):
+        case name_id::ph:
             itemPH = j.gethandle(MegaClient::PUBLICSETHANDLE);
             break;
 
