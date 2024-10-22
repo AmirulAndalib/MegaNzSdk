@@ -5242,7 +5242,7 @@ bool MegaClient::procsc()
                                 }
                                 break;
 
-                            case MAKENAMEID4('p', 's', 'e', 's'):
+                            case name_id::pses:
                                 sc_paymentreminder();
                                 break;
 
