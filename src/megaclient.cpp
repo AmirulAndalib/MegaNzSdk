@@ -5232,8 +5232,8 @@ bool MegaClient::procsc()
                                 sc_userattr();
                                 break;
 
-                            case UserAlert::type_psts:
-                            case UserAlert::type_psts_v2:
+                            case name_id::psts:
+                            case name_id::psts_v2:
                             case MAKENAMEID3('f', 't', 'r'):
                                 if (sc_upgrade(name))
                                 {
@@ -10000,7 +10000,7 @@ int MegaClient::readnode(JSON* j, int notify, putsource_t source, vector<NewNode
 
                 if (u != me && !ISUNDEF(u) && !fetchingnodes)
                 {
-                    useralerts.noteSharedNode(u, t, ts, n.get(), UserAlert::type_put);
+                    useralerts.noteSharedNode(u, t, ts, n.get(), name_id::put);
                 }
 
                 if (nn && nni >= 0 && nni < int(nn->size()))
